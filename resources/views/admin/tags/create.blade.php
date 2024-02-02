@@ -4,7 +4,7 @@
 <div class="container py-3">
     
     <div class="row">
-        <h1>Insert new Category</h1>
+        <h1>Insert new Tag</h1>
     </div>
 
     <div class="row">

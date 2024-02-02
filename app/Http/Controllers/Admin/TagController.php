@@ -43,32 +43,39 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Tag $tag)
     {
-        //
+        return view("admin.tags.show", compact("tag"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Tag $tag)
     {
-        //
+        return view("admin.tags.edit", compact("tag"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(TagRequest $request, string $id)
+    public function update(TagRequest $request, Tag $tag)
     {
-        //
+        $validated_tag = $request->validated();
+
+        $tag->fill($validated_tag);
+        $tag->save();
+
+        return redirect()->route("admin.tags.index");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+
+        return redirect()->route("admin.tags.index");
     }
 }
