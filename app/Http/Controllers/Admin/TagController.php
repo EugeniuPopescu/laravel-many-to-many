@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\TagRequest;
+use App\Models\Tag;
 
 class TagController extends Controller
 {
@@ -12,7 +13,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::all();
+
+        return view("admin.tags.index", compact("tags"));
     }
 
     /**
@@ -26,7 +29,7 @@ class TagController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TagRequest $request)
     {
         //
     }
@@ -50,7 +53,7 @@ class TagController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TagRequest $request, string $id)
     {
         //
     }

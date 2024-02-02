@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
 use App\Http\Controllers\Admin\PortfolioController; // <---- Importare il controller da usare!!
 use App\Http\Controllers\Admin\CategoryController;
-use App\Models\Portfolio;
+use App\Http\Controllers\Admin\TagController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::middleware(['auth']) // middleware che ci dice solo per i clienti autoriz
         Route::resource('portfolios', PortfolioController::class);
 
         Route::resource('categories', CategoryController::class);
+
+        Route::resource("tags", TagController::class);
     });
 
 require __DIR__ . '/auth.php';
