@@ -23,7 +23,7 @@ class TagRequest extends FormRequest
     {
         return [
             "name" => "required",
-            "llink" => ["nullable", "exists:categories,id"]
+            "link" => ["required"]
         ];
     }
 }

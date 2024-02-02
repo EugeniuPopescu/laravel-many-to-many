@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-6">
-            <form action="{{ route("admin.categories.store") }}" method="POST">
+            <form action="{{ route("admin.tags.store") }}" method="POST">
                 {{-- cross scripting request forgery --}}
                 @csrf
 
@@ -24,13 +24,13 @@
                     @enderror
                 </div>
                 
-                {{-- description  --}}
+                {{-- link  --}}
                 <div class="mb-3">
-                    <label for="description"  class="form-label">Description</label>
-                    <textarea class="form-control @error("description") is-invalid @enderror" rows="2" id="description" name="description" value="{{ old("description") }}"></textarea>
+                    <label for="link"  class="form-label">Link</label>
+                    <textarea class="form-control @error("link") is-invalid @enderror" rows="2" id="link" name="link" value="{{ old("link") }}"></textarea>
 
                     {{-- error message --}}
-                    @error("description")
+                    @error("link")
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

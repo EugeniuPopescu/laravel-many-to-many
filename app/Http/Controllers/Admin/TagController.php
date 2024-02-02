@@ -23,7 +23,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.tags.create");
     }
 
     /**
@@ -31,7 +31,13 @@ class TagController extends Controller
      */
     public function store(TagRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $new_tag = new Tag();
+        $new_tag->fill($validated);
+        $new_tag->save();
+
+        return redirect()->route("admin.tags.index");
     }
 
     /**
