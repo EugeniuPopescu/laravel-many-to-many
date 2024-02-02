@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/bootstrap';
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding-inline-start: 0;
+}
+
+.fixed {
+    position: fixed;
+    height: 100%;
+    padding-left: 0;
+}
